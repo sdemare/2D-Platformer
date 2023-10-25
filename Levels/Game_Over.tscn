@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy8elom66q11f"]
+
+[ext_resource type="FontFile" uid="uid://bmrv51piwsq5" path="res://Assets/Thruster-Regular.ttf" id="1"]
+
+[sub_resource type="GDScript" id="GDScript_yv0pj"]
+script/source = "extends Control
+
+func _on_Play_Again_pressed():
+	get_tree().change_scene_to_file(\"res://Levels/Level1.tscn\")
+
+
+func _on_Quit_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_yv0pj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -26.0
+offset_right = 1052.0
+offset_bottom = 642.0
+color = Color(0.203922, 0.227451, 0.25098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 246.0
+theme_override_fonts/font = SubResource("1")
+text = "Congratulations! 
+You win!"
+
+[node name="Play_Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 300.0
+offset_right = 612.0
+offset_bottom = 340.0
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+theme_override_fonts/font = SubResource("2")
+text = "Play Again?"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 360.0
+offset_right = 612.0
+offset_bottom = 400.0
+focus_neighbor_top = NodePath("../Play_Again")
+focus_previous = NodePath("../Play_Again")
+theme_override_fonts/font = SubResource("2")
+text = "Quit"
+
+[connection signal="pressed" from="Play_Again" to="." method="_on_Play_Again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

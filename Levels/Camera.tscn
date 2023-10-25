@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://uwjl5st1mvsp"]
+
+[sub_resource type="GDScript" id="GDScript_n3es7"]
+script/source = "extends Camera2D
+
+var player = null
+
+func _ready():
+	Global.death_zone = limit_bottom + 200
+	enabled = true
+
+func _physics_process(_delta):
+	player = get_node_or_null(\"/root/Game/Player_Container/Player\")
+	if player != null:
+		zoom = Vector2(2.0,2.0)
+		global_position = player.global_position
+	else:
+		zoom = Vector2(1,1)
+		position = Vector2(0,0)
+		
+"
+
+[node name="Camera" type="Camera2D"]
+process_callback = 0
+script = SubResource("GDScript_n3es7")
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+offset_left = -612.0
+offset_top = -400.0
+offset_right = 612.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)

@@ -104,6 +104,9 @@ size = Vector2(19, 52)
 
 [node name="Game" type="Node2D"]
 
+[node name="Background" type="TileMap" parent="."]
+format = 2
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(582, 673)
 metadata/_edit_group_ = true
