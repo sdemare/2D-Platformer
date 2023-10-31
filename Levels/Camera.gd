@@ -3,7 +3,7 @@ extends Camera2D
 var player = null
 
 func _ready():
-	Global.death_zone = limit_bottom + 200
+#	Global.death_zone = limit_bottom + 200
 	enabled = true
 
 func _physics_process(_delta):

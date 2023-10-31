@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bnsdmvhpmahtm" path="res://Assets/portal_end.png" id="3"]
 [ext_resource type="Script" path="res://Levels/Exit.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://iyxxa2othkrg" path="res://Levels/Camera.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://uwjl5st1mvsp" path="res://Levels/Camera.tscn" id="5"]
 [ext_resource type="Script" path="res://Levels/Spawn.gd" id="6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvi6q"]
